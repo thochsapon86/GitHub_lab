@@ -44,7 +44,7 @@ class _MyPageState extends State<MyPage> {
 
                 setState(() {
 
-                  message = 'Hello $user!';
+                  message = 'Welcome $user!';
 
                 });
 
