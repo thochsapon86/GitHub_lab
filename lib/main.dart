@@ -42,15 +42,21 @@ class _MyPageState extends State<MyPage> {
 
               onPressed: () {
 
-                setState(() {
+                Navigator.push(
 
-                  message = 'Welcome $user!';
+                  context,
 
-                });
+                  MaterialPageRoute<void>(
+
+                    builder: (context) => ProfilePage(user: user),
+
+                  ),
+
+                );
 
               },
 
-              child: Text('กดฉันสิ $user'),
+              child: const Text('Press'),
 
             ),
 
@@ -65,4 +71,50 @@ class _MyPageState extends State<MyPage> {
   }
 
 }
- 
+
+
+class ProfilePage extends StatelessWidget {
+
+  const ProfilePage({super.key, required this.user});
+
+  final String user;
+
+  @override
+
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+
+      appBar: AppBar(title: const Text('Profile')),
+
+      body: Center(
+
+        child: Column(
+
+          mainAxisSize: MainAxisSize.min,
+
+          children: [
+
+            Text(user),
+
+            const SizedBox(height: 16),
+
+            ElevatedButton(
+
+              onPressed: () => Navigator.pop(context),
+
+              child: const Text('ย้อนกลับ'),
+
+            ),
+
+          ],
+
+        ),
+
+      ),
+
+    );
+
+  }
+
+}
