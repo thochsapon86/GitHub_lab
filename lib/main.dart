@@ -50,7 +50,7 @@ class _MyPageState extends State<MyPage> {
 
               },
 
-              child: const Text('กดฉัน'),
+              child: Text('กดฉันสิ $user'),
 
             ),
 
